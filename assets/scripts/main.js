@@ -22,6 +22,10 @@
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+        jQuery(function($) {
+          $('a[href^="#"]').attr('data-scroll','');
+        });
+        smoothScroll.init();
       }
     },
     // Home page
