@@ -7,8 +7,11 @@
       endif;
       ?>
     </nav>
+
     <p>
       &copy; D'Ale Artei <?php echo date("Y"); ?>
     </p>
+
+    <a href="#top">Back to top</a>
   </div>
 </footer>

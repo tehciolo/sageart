@@ -9,7 +9,32 @@
 }
 
 .main-header {
+  padding: 0 1rem;
   background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 2px rgba(#eee, .4);
   position: fixed;
   width: 100%;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 539px) {
+      .brand,
+      .header-menu__wrapper {
+        width: 100%;
+      }
+    }
+  }
+
+  a {
+    color: $text-color--dark;
+    transition: color .3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: $brand-primary;
+    }
+  }
 }

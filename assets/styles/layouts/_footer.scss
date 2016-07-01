@@ -1,5 +1,9 @@
 .main-footer {
   background-color: #333;
   padding: 1rem;
-  color: #ddd;
+  color: $text-color--light;
+
+  a {
+    color: $text-color--light;
+  }
 }

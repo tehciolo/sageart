@@ -25,7 +25,10 @@
         jQuery(function($) {
           $('a[href^="#"]').attr('data-scroll','');
         });
-        smoothScroll.init();
+        smoothScroll.init({
+            easing: 'easeInOutCubic',
+            offset: 85
+        });
       }
     },
     // Home page

@@ -1,4 +1,28 @@
 .site-menu {
   list-style-type: none;
   display: flex;
+  font-family: $font-family--primary;
+  margin: 0;
+  padding: 0;
+
+  a {
+    font-weight: bold;
+  }
+}
+
+.header-menu {
+  font-size: 20px;
+  justify-content: center;
+  @media (min-width: 540px) {
+    justify-content: flex-end;
+  }
+
+  li:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  &__wrapper {
+    flex-grow: 1;
+    padding: 1rem 0;
+  }
 }
