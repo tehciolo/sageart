@@ -1,9 +1,49 @@
 .main-footer {
   background-color: #333;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
   color: $text-color--light;
+  position: relative;
 
   a {
     color: $text-color--light;
   }
+}
+
+.scroll-up {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  padding: 5px 10px;
+  background-color: #333;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+  img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.facebook-link {
+  img {
+    display: inline-block;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      opacity: 0.8;
+    }
+  }
+}
+
+.colophon {
+  text-align: center;
+  margin-top: 1rem;
 }

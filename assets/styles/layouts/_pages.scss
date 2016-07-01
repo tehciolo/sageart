@@ -17,3 +17,28 @@
     }
   }
 }
+
+.contact {
+  padding-bottom: 7rem;
+}
+
+.contact-grid {
+  display: flex;
+
+  &__left {
+    address {
+      font-style: normal;
+      display: inline-block;
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+    padding-left: 2rem;
+  }
+}
+
+.work,
+.contact {
+  background-color: $brand-tertiary;
+}

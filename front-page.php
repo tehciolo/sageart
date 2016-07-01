@@ -66,7 +66,7 @@
       if ($query->have_posts()) {
         while ($query->have_posts()) {
           $query->the_post();
-          echo '<div class="hello">';
+          echo '<div class="contact-grid">';
           the_content();
           echo '</div>';
         }

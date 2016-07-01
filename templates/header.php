@@ -13,4 +13,6 @@
       </div>
     </div>
   </header>
+
+  <a href="#work" class="scroll-down"><img src="/wp-content/themes/sageart/dist/images/down.png"></a>
 </section>

@@ -26,3 +26,38 @@
     padding: 1rem 0;
   }
 }
+
+
+.footer-menu {
+  justify-content: center;
+  @media (min-width: 540px) {
+    justify-content: flex-start;
+  }
+
+  li {
+    line-height: 30px;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $text-color--light;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+
+    nav {
+      flex-grow: 1;
+    }
+  }
+}
