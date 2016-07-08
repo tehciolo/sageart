@@ -44,8 +44,8 @@
             echo '<ul class="piece__list" data-show="pick-category" data-category-id="'.$category->term_id.'">';
             while($wp_query->have_posts()) : $wp_query->the_post();
             	echo '<li class="piece__item">';
-                echo '<a href="#" class="piece__inner">';
-                  $images = get_field('poze');
+                $images = get_field('poze');
+                echo '<a href="'.$images[0]['url'].'" class="piece__inner" data-lightbox="'.get_the_ID().'">';
                   echo '<div class="piece__image" style="background-image: url('.$images[0]['url'].')"></div>';
                   echo '<div class="piece__info">';
                     echo '<h4 class="piece__title">';
@@ -54,6 +54,11 @@
                     echo the_field('info');
                   echo '</div>';
                 echo '</a>';
+                if (count($images) > 1) {
+                  for($i = 1; $i < count($images); ++$i) {
+                    echo '<a href="'.$images[$i]['url'].'" style="display: none;" data-lightbox="'.get_the_ID().'"></a>';
+                  }
+                }
               echo '</li>';
             endwhile;
             echo '</ul>';

@@ -10,11 +10,5 @@ $text-color--dark:            #333333;
 $text-color--light:           #dddddd;
 
 // Font Stacks
-$font-url--google : '//fonts.googleapis.com/css?family=Quattrocento+Sans:400,700|Vollkorn:400,700';
 $font-family--primary : 'Quattrocento Sans', sans-serif;
 $font-family--secondary : 'Vollkorn', serif;
-
-// Import if Google Fonts URL is defined
-@if variable-exists(font-url--google) {
-  @import url($font-url--google);
-}

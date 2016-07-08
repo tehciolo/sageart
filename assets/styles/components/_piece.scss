@@ -35,13 +35,29 @@
     display: flex;
     flex-direction: row;
     color: inherit;
+
+    @media (max-width: 579px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__image {
-    width: 195px;
-    min-height: 195px;
-    flex-shrink: 0;
     margin-right: 2rem;
+
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+
+    @media (min-width: 580px) {
+      width: 195px;
+      height: auto;
+      min-height: 195px;
+      flex-shrink: 0;
+      margin-bottom: 0;
+    }
+
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
