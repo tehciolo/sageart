@@ -2,6 +2,28 @@
   <div class="container">
     <h2 id="work" class="section__title">Lucrari</h2>
 
+    <?php
+      $categories = get_categories( array(
+          'orderby' => 'name',
+          'order'   => 'ASC'
+      ) );
+      $display = false;
+
+      foreach ($categories as $category) {
+        // Get only image url
+        $params = array(
+          'term_id' => $category->term_id,
+          'size' => 'full'
+        );
+        $src = category_image_src( $params , $display );
+        echo $src;
+
+        //echo '<pre>'.var_dump($category).'</pre>';
+      }
+
+      //echo '<pre>'.var_dump($categories).'</pre>';
+    ?>
+
     <hr class="center">
 
     <p>
@@ -33,11 +55,7 @@
       <section class="section about">
           <h2 class="section__title">Despre</h2>
 
-          <?php
-
-              the_content();
-
-          ?>
+          <?php the_content(); ?>
 
           <hr>
       </section>

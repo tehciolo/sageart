@@ -27,7 +27,7 @@
         });
         smoothScroll.init({
             easing: 'easeInOutCubic',
-            offset: 85
+            offset: 130
         });
       }
     },
