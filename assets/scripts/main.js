@@ -23,7 +23,28 @@
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
         jQuery(function($) {
+          // add attribute on anchor links for use with smooth-scroll plugin
           $('a[href^="#"]').attr('data-scroll','');
+
+          // init default category
+          $('[data-category-id="'+$('[data-action="pick-category"].is-active').data('category-id')+'"]').show();
+
+          // add event listener for category toggle
+          var $categoryList = $('[data-action="pick-category"]');
+          var $pieceList = $('[data-show="pick-category"]');
+
+          $categoryList.click(function(){
+            if (!$(this).hasClass('is-active')) {
+              $categoryList.removeClass('is-active');
+              $pieceList.hide('fast');
+              $(this).addClass('is-active');
+              $('[data-show="pick-category"][data-category-id="'+$(this).data('category-id')+'"]').show('400', function() {
+                $('html,body').animate({
+                  scrollTop: $('[data-showcase="pieces"]').offset().top - 140
+                }, 500);
+              });
+            }
+          });
         });
         smoothScroll.init({
             easing: 'easeInOutCubic',

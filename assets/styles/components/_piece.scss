@@ -1,0 +1,53 @@
+.piece {
+  &__container {
+    border: 2px solid $text-color--dark;
+    padding: 1rem;
+  }
+
+  &__list {
+    display: none;
+    list-style-type: none;
+    margin-bottom: 0;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba($text-color--dark, .7);
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    color: inherit;
+  }
+
+  &__image {
+    width: 195px;
+    min-height: 195px;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__info {
+    flex-grow: 1;
+  }
+}

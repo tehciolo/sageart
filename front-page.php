@@ -2,29 +2,77 @@
   <div class="container">
     <h2 id="work" class="section__title">Lucrari</h2>
 
-    <?php
-      $categories = get_categories( array(
-          'orderby' => 'name',
-          'order'   => 'ASC'
-      ) );
-      $display = false;
+    <ul class="work__list">
+      <?php
+        $categories = get_categories( array(
+            'orderby' => 'name',
+            'order'   => 'ASC'
+        ) );
+        $display = false;
 
-      foreach ($categories as $category) {
-        // Get only image url
-        $params = array(
-          'term_id' => $category->term_id,
-          'size' => 'full'
-        );
-        $src = category_image_src( $params , $display );
-        echo $src;
+        foreach ($categories as $index=>$category) {
 
-        //echo '<pre>'.var_dump($category).'</pre>';
-      }
+          // Get only image url
+          $params = array(
+            'term_id' => $category->term_id,
+            'size' => 'full'
+          );
+          $src = category_image_src( $params , $display );
 
-      //echo '<pre>'.var_dump($categories).'</pre>';
-    ?>
+          echo '<li class="work__item';
+          if ($index == 0) { echo ' is-active'; };
+          echo '" style="background-image: url('. $src .')" data-action="pick-category" data-category-id="'.$category->term_id.'">';
+
+          echo '<h3 class="work__title">'.$category->cat_name.'</h3>';
+          // echo '<pre>'.var_dump($category).'</pre>';
+
+          echo '</li>';
+        }
+      ?>
+    </ul>
+
+    <div class="piece__container" data-showcase="pieces">
+      <?php
+
+        foreach ($categories as $index=>$category) {
+
+          $args = array('post_type' => 'lucrare', 'orderby' => 'name', 'post_status' => 'publish', 'posts_per_page'=>'-1', 'cat' => $category->term_id);
+          $wp_query = new WP_Query($args);
+
+          // The Loop
+          if($wp_query->have_posts()):
+            echo '<ul class="piece__list" data-show="pick-category" data-category-id="'.$category->term_id.'">';
+            while($wp_query->have_posts()) : $wp_query->the_post();
+            	echo '<li class="piece__item">';
+                echo '<a href="#" class="piece__inner">';
+                  $images = get_field('poze');
+                  echo '<div class="piece__image" style="background-image: url('.$images[0]['url'].')"></div>';
+                  echo '<div class="piece__info">';
+                    echo '<h4 class="piece__title">';
+                      the_title();
+                    echo '</h4>';
+                    echo the_field('info');
+                  echo '</div>';
+                echo '</a>';
+              echo '</li>';
+            endwhile;
+            echo '</ul>';
+          else:
+             echo 'no posts';
+          endif;
+
+          wp_reset_postdata();
+
+        }
+
+      ?>
+    </div>
+
+    <br>
 
     <hr class="center">
+
+    <br>
 
     <p>
       Preturile mentionate in descrierea lucrarilor au rol orientativ.
@@ -56,8 +104,6 @@
           <h2 class="section__title">Despre</h2>
 
           <?php the_content(); ?>
-
-          <hr>
       </section>
     </div>
   </div>

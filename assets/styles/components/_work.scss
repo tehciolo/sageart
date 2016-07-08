@@ -1,0 +1,51 @@
+.work {
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 227px;
+    height: 227px;
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    border: 2px solid $text-color--dark;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &.is-active {
+      border-color: rgba($text-color--light, .9);
+
+      .work__title {
+        background-color: rgba($text-color--light, .9);
+        color: $text-color--dark
+      }
+    }
+
+    &:hover {
+      border-color: rgba($text-color--light, .9);
+
+      .work__title {
+        background-color: rgba($text-color--light, .9);
+        color: $text-color--dark
+      }
+    }
+  }
+
+  &__title {
+    background-color: rgba($text-color--dark, .7);
+    color: $text-color--light;
+    margin: 0;
+    font-size: 1.2rem;
+    padding: .5rem;
+  }
+}
