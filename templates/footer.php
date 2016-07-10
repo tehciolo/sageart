@@ -11,7 +11,7 @@
         ?>
       </nav>
 
-      <a class="facebook-link" href="facebooklink"><img src="/wp-content/themes/sageart/dist/images/facebook.png"></a>
+      <a class="facebook-link" href="https://www.facebook.com/daleartei"><img src="/wp-content/themes/sageart/dist/images/facebook.png"></a>
     </div>
 
     <p class="colophon">
