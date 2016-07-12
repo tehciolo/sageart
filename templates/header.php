@@ -14,5 +14,7 @@
     </div>
   </header>
 
+  <h1 class="motto">Povești în lumină și culoare</h1>
+
   <a href="#work" class="scroll-down"><img src="/wp-content/themes/sageart/dist/images/down.png"></a>
 </section>
