@@ -46,12 +46,16 @@
             	echo '<li class="piece__item">';
                 $images = get_field('poze');
                 $price = get_field('pret');
+                $title = get_field('titlu');
                 echo '<a href="'.$images[0]['url'].'" class="piece__inner" data-lightbox="'.get_the_ID().'">';
                   echo '<div class="piece__image" style="background-image: url('.$images[0]['url'].')"></div>';
                   echo '<div class="piece__info">';
-                    echo '<h4 class="piece__title">';
+                    echo '<h4 class="piece__name">';
                       the_title();
                     echo '</h4>';
+                    if ($title != '') {
+                      echo '<h5 class="piece__title">'.$title.'</h5>';
+                    }
                     echo the_field('info');
                     if ($price != '') {
                       echo '<p class="piece__price">Pretul lucrarii: <strong>'.$price.'</strong></p>';

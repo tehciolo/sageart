@@ -22,13 +22,18 @@
     }
   }
 
-  &__title {
+  &__name {
     text-transform: uppercase;
     font-weight: bold;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__title {
+    font-style: italic;
+    font-weight: normal;
   }
 
   &__inner {
