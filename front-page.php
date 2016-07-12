@@ -45,6 +45,7 @@
             while($wp_query->have_posts()) : $wp_query->the_post();
             	echo '<li class="piece__item">';
                 $images = get_field('poze');
+                $price = get_field('pret');
                 echo '<a href="'.$images[0]['url'].'" class="piece__inner" data-lightbox="'.get_the_ID().'">';
                   echo '<div class="piece__image" style="background-image: url('.$images[0]['url'].')"></div>';
                   echo '<div class="piece__info">';
@@ -52,6 +53,9 @@
                       the_title();
                     echo '</h4>';
                     echo the_field('info');
+                    if ($price != '') {
+                      echo '<p class="piece__price">Pretul lucrarii: <strong>'.$price.'</strong></p>';
+                    }
                   echo '</div>';
                 echo '</a>';
                 if (count($images) > 1) {
