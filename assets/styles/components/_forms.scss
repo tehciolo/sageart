@@ -1,0 +1,27 @@
+.form {
+  &__group {
+    margin-bottom: 1rem;
+  }
+}
+
+div.wpcf7-response-output {
+  margin: 0;
+  padding: 0;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-spam-blocked,
+div.wpcf7-mail-sent-ng {
+  border: 0;
+  color: tomato;
+}
+
+div.wpcf7-mail-sent-ok {
+  border: 0;
+  color: $brand-primary;
+}
+
+span.wpcf7-not-valid-tip {
+  margin-top: 1rem;
+  color: tomato;
+}
